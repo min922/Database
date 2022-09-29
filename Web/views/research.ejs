@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>도서 검색</title>
+</head>
+<body>
+	<h4>검색을 원하는 도서명 혹은 저자를 입력해주세요.</h4>
+	<form method="post">
+		<select id = "sel" name = "sel" size = "1">
+			<option value="title">도서명으로 검색</option>
+			<option value="author">저자로 검색</option>
+		</select> 
+		<input type="text" name="search" id = "search">
+		<input type="submit" name="submit" value="검색">
+	</form>
+	<br>
+	<caption>검색 결과</caption>
+	<table border="1">
+		<tr>
+			<th>책 제목</th>
+			<th>저자</th>
+			<th>도서관</th>
+			<th>재고</th>
+		</tr>
+		<% results.forEach(function (value){ %>
+		<tr>
+			<td><%= value.title %></td>
+			<td><%= value.author %></td>
+			<td><%= value.lname %></td>
+			<td><%= value.qty %></td>
+		</tr>
+		<% }); %>
+	</table>
+	<a href="/"><p>메인으로 돌아가기</p></a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>내 정보</title>
+</head>
+<body>
+	<h4>아이디와 휴대폰 뒤 네자리를 입력해주세요.</h4>
+	<form method="post">
+		<p>아이디		<input type="text" name="id" id = "id"></p>
+		<p>휴대폰 번호		<input type="text" name="num" id = "num"></p>
+		<input type="submit" name="submit" value="정보 조회">
+	</form>
+	<p>(예 : 010-1234-5678인 경우, 5678을 입력해주세요.)</p>
+	<% results.forEach(function (value){ %>
+	<h4><%=value.NAME%> 회원님, 반갑습니다!</h4>
+	<h4>회원님의 ID : <%=value.ID%></h4>
+	<h4>회원님의 전화번호 : <%=value.PHONENUM%></h4>
+	<h4>회원님은 현재 <%=value.AVAILABLE%>권의 도서를 대여할 수 있습니다.</h4>
+	<% }); %>
+	<p>정보 수정은 도서관의 사서님께 문의해주세요.</p>
+	<a href="/"><p>메인으로 돌아가기</p></a>
+</body>
+</html>

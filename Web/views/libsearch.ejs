@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+	<meta charset="UTF-8">
+	<title>도서관 검색</title>
+</head>
+<body>
+	<h4>도서관을 검색해주세요.</h4>
+	<form method="POST">
+		<input type="text" name="libsearch" id = "libsearch">
+		<input type="submit" name="submit" value="검색">
+	</form>
+	<br>
+	<caption>검색 결과</caption>
+	<table border="1">
+		<tr>
+			<th>도서관 명</th>
+			<th>주소</th>
+			<th>책 제목</th>
+			<th>저자</th>
+			<th>재고</th>
+		</tr>
+		<% results.forEach(function (value){ %>
+		<tr>
+			<td><%= value.lname %></td>
+			<td><%= value.location %></td>
+			<td><%= value.title %></td>
+			<td><%= value.author %></td>
+			<td><%= value.qty %></td>
+		</tr>
+		<% }); %>
+	</table>
+	<a href="/"><p>메인으로 돌아가기</p></a>
+</body>
+</html>
